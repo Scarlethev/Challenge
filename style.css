@@ -11,37 +11,50 @@ body{
 }
 
 .text_nav {
-    /* font-family: 'Dancing Script', cursive; */
     font-size: 18px;
-    color: white !important;
+    color:#B70E21;
+   
 }
 
-div>a {
+.headerThree{
+    display:flex;
+    flex-direction: row;
+}
+
+.navMenu{
+    display:flex;
+    column-gap: 20px;
+}
+
+.navMenu a{
     text-decoration: none;
+    list-style: none;
 }
 
-header>nav {
+/* 
+header > nav {
     height: 100px;
 }
 
 .indexZ {
     z-index: 1;
 }
-
+*/ 
 
 .tamano{
     width: 100%;
     max-width: 1300px;
     height: 500px;
-}
+} 
 
 /* GALERIA  */
 
-
-#galeria{
+.containerActividades{
+    display:flex;
     position: relative;
     overflow: hidden;
     flex-direction: column;
+
 }
 
 .galeria img{
@@ -60,19 +73,6 @@ header>nav {
     padding: 25px;
 }
 
-/* .galeria .texto {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* transition: 1s ease; 
-    background-color: rgb(0, 0, 0, 0.25);
-} */
-
 .imagenTexto{
     position: relative;
     /* width: 100%;
@@ -88,6 +88,88 @@ header>nav {
     text-align: center;
 }
 
+/* PASE LIBRE*/
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: red;
+    margin: 15% auto;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: #000;
+}
+
+.close {
+    color: #000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* PLANES */
+
+.planes{
+display:flex;
+}
+
+.pase{
+    display:flex;
+    flex-direction: column;
+}
+
+/* TIENDA */
+
+.tienda{
+    display:flex;
+}
+
+.container-sedes{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sedes h3{
+text-align: center;
+align-items: center;
+height: 80px;
+}
+
+.containerContacto h3{
+    text-align: center;
+    align-items: center;
+    height: 80px;
+    margin-top: 20px;
+}
 
  /* FOOTER */
  
@@ -176,7 +258,9 @@ header>nav {
       padding: 0 1.5em;
   }
   
-  .container {
+  .containerContacto {
+    display:flex;
+    flex-direction: column;
       max-width: 1170px;
       margin-left: auto;
       margin-right: auto;
@@ -265,6 +349,48 @@ header>nav {
       text-align: center;
       margin: 0 0 1rem 0;
   }
+
+.tituloLogin{
+    display:flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    margin-top:20px;
+}
+
+.login{
+    display:flex;
+    flex-direction: column;
+}
+
+.containerLogin{
+    display:flex;
+    flex-direction: row;
+    width:80%;
+    column-gap: 20px;
+    align-items: center;
+    margin:auto;
+    min-height: 400px;
+
+}
+
+.ingresar, .registrar{
+    display:flex;
+    flex-direction: column;
+    width:45%;
+    min-height: 300px;
+    padding: 20px;
+    line-height: 3;
+    transition: background-color 1s ease-out;
+}
+
+.ingresar form{
+    display: flex;
+    flex-direction: column;
+}
+
+
   
   /* / LARGE SIZE / */
   @media(min-width: 700px) {
