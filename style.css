@@ -35,22 +35,11 @@ body {
     padding-top: 20px;
 }
 
-
-
 .navMenu a {
     text-decoration: none;
     list-style: none;
 }
 
-/* 
-header > nav {
-    height: 100px;
-}
-
-.indexZ {
-    z-index: 1;
-}
-*/
 
 .tamano {
     width: 100%;

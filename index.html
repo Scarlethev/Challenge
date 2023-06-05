@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -137,71 +138,68 @@
                             <h3> ZUMBA</h3>
                         </div>
                     </div>
-
                 </div>
-
             </section>
         </div>
 
 
 
         <!-- TARJETA DE PLANES  -->
-        
-        <div class="container-lg  posicion-planes">
-            <div class="container__cards text-center text-white container-lg-4 container-md-6">
-                <div class="card text-white">
-                    <div class="cover__card text-center">
-                        <h1 class="bg-dark-subtle py-3">PLAN BLACK</h1>
-                        <p class="tamañoPrecio"> $15.000/ mes</p>
+        <div id="plans">
+            <div class="container-lg  posicion-planes">
+                <div class="container__cards text-center text-white container-lg-4 container-md-6">
+                    <div class="card text-white">
+                        <div class="cover__card text-center">
+                            <h1 class="bg-dark-subtle py-3">PLAN BLACK</h1>
+                            <p class="tamañoPrecio"> $15.000/ mes</p>
+                        </div>
+                        <h2>!Accede a +100 sedes en todo capital!</h2>
+                        <hr class="bg-white">
+                        <i> Acceso a +100 sedes </i>
+                        <i>Acceso a todas las disciplinas</i>
+                        <i>Cualquier dia y horario de la semana</i>
+                        <i>Clases en vivo y videollamdas con Personal Trainer</i>
+                        <i>App Nutrición</i>
+                        <hr>
+                        <div class="footer__card ">
+                            <button class="user__name">ASÓCIATE YA!</button>
+                        </div>
                     </div>
-                    <h2>!Accede a +100 sedes en todo capital!</h2>
-                    <hr class="bg-white">
-                    <i> Acceso a +100 sedes </i>
-                    <i>Acceso a todas las disciplinas</i>
-                    <i>Cualquier dia y horario de la semana</i>
-                    <i>Clases en vivo y videollamdas con Personal Trainer</i>
-                    <i>App Nutrición</i>
-                    <hr>
-                    <div class="footer__card ">
-                        <button class="user__name">!Asociate Ya! </button>
+
+                    <div class="card text-white">
+                        <div class="cover__card ">
+                            <h1 class="bg-danger py-3">PLAN SMART</h1>
+                            <p class="tamañoPrecio"> $12.000/ mes</p>
+                        </div>
+                        <h2>!Accede a +50 sedes en todo capital!</h2>
+                        <hr class="bg-white">
+                        <i> Acceso a +50 sedes </i> <br>
+                        <i>Acceso a todas las disciplinas</i> <br>
+                        <i>Cualquier dia y horario de la semana</i> <br>
+                        <hr>
+                        <div class="footer__card">
+                            <button class="user__name">ASÓCIATE YA!</button>
+                        </div>
                     </div>
-                </div>
-        
-                <div class="card text-white">
-                    <div class="cover__card ">
-                        <h1 class="bg-danger py-3">PLAN SMART</h1>
-                        <p class="tamañoPrecio"> $12.000/ mes</p>
-                    </div>
-                    <h2>!Accede a +50 sedes en todo capital!</h2>
-                    <hr class="bg-white">
-                    <i> Acceso a +50 sedes </i> <br>
-                    <i>Acceso a todas las disciplinas</i> <br>
-                    <i>Cualquier dia y horario de la semana</i> <br>
-                    <hr>
-                    <div class="footer__card">
-                        <button class="user__name">!Asociate Ya!</button>
-                    </div>
-                </div>
-        
-                <div class="card text-white">
-                    <div class="cover__card ">
-                        <h1 class="bg-warning py-3">PLAN PLUS</h1>
-                        <p class="tamañoPrecio"> $8.000/ mes</p>
-                    </div>
-                    <h2>!Accede a cualquier sede a nivel local!</h2>
-                    <hr class="bg-white">
-                    <i> Acceso a cualquiers sede a nivel local </i> <br>
-                    <i>Acceso a todas las disciplinas</i><br>
-                    <i>3 veces por semana</i> <br>
-                    <hr>
-                    <div class="footer__card">
-                        <button class="user__name">!Asociate Ya!</button>
+
+                    <div class="card text-white">
+                        <div class="cover__card ">
+                            <h1 class="bg-warning py-3">PLAN PLUS</h1>
+                            <p class="tamañoPrecio"> $8.000/ mes</p>
+                        </div>
+                        <h2>!Accede a cualquier sede a nivel local!</h2>
+                        <hr class="bg-white">
+                        <i> Acceso a cualquiers sede a nivel local </i> <br>
+                        <i>Acceso a todas las disciplinas</i><br>
+                        <i>3 veces por semana</i> <br>
+                        <hr>
+                        <div class="footer__card">
+                            <button class="user__name">ASÓCIATE YA!</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        
         </div>
-
 
 
         <div id="pass">
@@ -252,68 +250,7 @@
         <!-- Modal -->
         <div id="modalComentario"></div>
 
-        <!-- TARJETA DE PLANES  -->
-        <div id="plans">
-            <!-- <section id="planes">
-    <div class="container__background-triangle">
-        <div class="triangle triangle1"></div>
-        <div class="triangle triangle2"></div>
-        <div class="triangle triangle3"></div>
-    </div>
 
-    <div class="container__cards text-center text-white ">
-        <div class="card text-white">
-            <div class="cover__card text-center">
-                <h1 class="bg-dark-subtle py-3">PLAN BLACK</h1>
-                <p class="tamañoPrecio"> $15.000/ mes</p>
-            </div>
-            <h2>!Accede a +100 sedes en todo capital!</h2>
-            <hr class="bg-white">
-            <i> Acceso a +100 sedes </i>
-            <i>Acceso a todas las disciplinas</i>
-            <i>Cualquier dia y horario de la semana</i>
-            <i>Clases en vivo y videollamdas con Personal Trainer</i>
-            <i>App Nutrición</i>
-            <hr>
-            <div class="footer__card ">
-                <button class="user__name">!Asociate Ya! </button>
-            </div>
-        </div>
-
-        <div class="card text-white">
-            <div class="cover__card ">
-                <h1 class="bg-danger py-3">PLAN SMART</h1>
-                <p class="tamañoPrecio"> $12.000/ mes</p>
-            </div>
-            <h2>!Accede a +50 sedes en todo capital!</h2>
-            <hr class="bg-white">
-            <i> Acceso a +50 sedes </i> <br>
-            <i>Acceso a todas las disciplinas</i> <br>
-            <i>Cualquier dia y horario de la semana</i> <br>
-            <hr>
-            <div class="footer__card">
-                <button class="user__name">!Asociate Ya!</button>
-            </div>
-        </div>
-
-        <div class="card text-white">
-            <div class="cover__card ">
-                <h1 class="bg-warning py-3">PLAN PLUS</h1>
-                <p class="tamañoPrecio"> $8.000/ mes</p>
-            </div>
-            <h2>!Accede a cualquier sede a nivel local!</h2>
-            <hr class="bg-white">
-            <i> Acceso a cualquiers sede a nivel local </i> <br>
-            <i>Acceso a todas las disciplinas</i><br>
-            <i>3 veces por semana</i>
-            <hr>
-            <div class="footer__card">
-                <button class="user__name">!Asociate Ya!</button>
-            </div>
-        </div>
-    </div>
-</section> -->
-        </div>
 
         <!--TIENDA-->
 
@@ -327,12 +264,9 @@
                             <input id="input" type="text" placeholder="Busca aquí...">
                         </div>
                     </header>
+                    <div id="checkbox">checkbox</div>
 
-                    <div class="row productos" id="productos">
-
-                        <div id="checkbox">checkbox</div>
-
-                    </div>
+                    <div class="row productos" id="productos"></div>
             </section>
         </div>
 
@@ -346,7 +280,8 @@
                             <h5 class="card-title">Sede Central</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Retiro</h6>
                             <p class="card-text">Dirección: En el barrio de Retiro.</p>
-                            <a href="https://goo.gl/maps/fnyGA1Cfy7RCTLaJ8"  target="_blank" class="card-link">Ver mapa</a>
+                            <a href="https://goo.gl/maps/fnyGA1Cfy7RCTLaJ8" target="_blank" class="card-link">Ver
+                                mapa</a>
                         </div>
                     </div>
 
@@ -355,7 +290,8 @@
                             <h5 class="card-title">Sede</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Boedo</h6>
                             <p class="card-text">Dirección: En el barrio de Boedo.</p>
-                            <a href="https://goo.gl/maps/Zy6KN5p2AuwZYPoi8" target="_blank" class="card-link">Ver mapa</a>
+                            <a href="https://goo.gl/maps/Zy6KN5p2AuwZYPoi8" target="_blank" class="card-link">Ver
+                                mapa</a>
                         </div>
                     </div>
 
@@ -364,7 +300,8 @@
                             <h5 class="card-title">Sede</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Palermo</h6>
                             <p class="card-text">Dirección: En el barrio de Palermo.</p>
-                            <a href="https://goo.gl/maps/k2n1fdwp3eQnKZYa9" target="_blank" class="card-link">Ver mapa</a>
+                            <a href="https://goo.gl/maps/k2n1fdwp3eQnKZYa9" target="_blank" class="card-link">Ver
+                                mapa</a>
                         </div>
                     </div>
 
@@ -373,7 +310,8 @@
                             <h5 class="card-title">Sede</h5>
                             <h6 class="card-subtitle mb-2 text-body-secondary">Barrio Norte</h6>
                             <p class="card-text">Dirección: En el barrio de Barrio Norte.</p>
-                            <a href="https://goo.gl/maps/dzQVDRurBUs6doqN8" target="_blank" class="card-link">Ver mapa</a>
+                            <a href="https://goo.gl/maps/dzQVDRurBUs6doqN8" target="_blank" class="card-link">Ver
+                                mapa</a>
                         </div>
                     </div>
                 </div>
@@ -381,73 +319,11 @@
         </div>
 
         <div id="contact">
-            <seccion class="containerContacto" id="containerContacto">
-                <h3>Contactanos</h3>
-                <div class="contact-wrapper animated bounceInUp">
-                    <div class="contact-form">
-                        <form action="">
-                            <p>
-                                <label>Nombre y Apellido</label>
-                                <input type="text" name="Nombre y Apellido">
-                            </p>
-                            <p>
-                                <label>Email</label>
-                                <input type="email" name="Email">
-                            </p>
-                            <p>
-                                <label>Numero de telefono</label>
-                                <input type="tel" name="Numero de telefono">
-                            </p>
 
-                            <p class="block">
-                                <button> ENVIAR </button>
-                            </p>
-                        </form>
-                    </div>
-                    <div class="contact-info">
-                        <h4>Mas Info</h4>
-                        <p> Ubicacion: </p>
-                        <p>Capital Federal</p>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105085.75690524078!2d-58.51775584746096!3d-34.605933995200715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1685996822488!5m2!1ses-419!2sar"
-                            class="tag-map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-                </section>
         </div>
 
         <div id="registration-and-reservation">
-            <section class="login" id="login">
-                <div class="text-center pt-5">
-                    <h4>INGRESA PARA RESERVAR TU CLASE</h4>
-                </div>
-
-                <div class=" containerLogin">
-
-                    <div class="ingresar">
-                        <form action="" id="formularioSocio">
-                            <label name="usuario">USUARIO</label>
-                            <input type="text" name="usuario" id="usuario">
-                            <label name="password">CONTRASEÑA</label>
-                            <input type="password" name="password" id="password">
-                            <p class="block">
-                                <input type="submit" class="btn btn-group-toggle btn-light" value="Enviar">
-                            </p>
-                        </form>
-                    </div>
-
-                    <div class="registrar">
-                        <h4>Registrate</h4>
-                        <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
-                        <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
-                        <input type="email" name="email" id="email" value=""
-                            placeholder="Ingresa tu direccion de correo">
-                        <input type="password" name="contraseña" id="contraseña" value=""
-                            placeholder="Ingresa tu clave">
-                    </div>
-                </div>
-            </section>
+            
         </div>
     </main>
 

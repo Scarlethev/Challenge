@@ -7,6 +7,7 @@ let store = document.getElementById("store")
 let locations = document.getElementById("locations")
 let contact = document.getElementById("contact")
 let registration = document.getElementById("registration-and-reservation")
+let tarjetas = document.getElementById("productos")
 
 let selectNav = document.getElementsByClassName("navLink");
 var buttonNav = [];
@@ -24,7 +25,6 @@ for (var i = 0; i < selectNav.length; i++) {
 function imprimir(id) {
 
   switch (id) {
-
     case "planes":
       galeryHome.style.display = "none";
       activities.style.display = "none";
@@ -45,6 +45,8 @@ function imprimir(id) {
       locations.style.display = "none";
       contact.style.display = "none";
       registration.style.display = "none";
+      categories(productos)
+      display(productos)
       break;
 
     case "sedes":
@@ -68,6 +70,7 @@ function imprimir(id) {
       locations.style.display = "none";
       contact.style.display = "flex";
       registration.style.display = "none";
+      printForm();
       break
 
     case "login":
@@ -79,6 +82,7 @@ function imprimir(id) {
       locations.style.display = "none";
       contact.style.display = "none";
       registration.style.display = "flex";
+      printLogin();
       break;
 
     default:
@@ -90,8 +94,6 @@ function imprimir(id) {
       locations.style.display = "none";
       contact.style.display = "none";
       registration.style.display = "none";
-      categories(productos)
-      display(productos)
       break;
   }
 }
@@ -118,50 +120,116 @@ function display(array) {
           </div>
       `
   }
-
   tarjetas.innerHTML = html;
-
 }
 
 
 // FORMULARIO DE RESERVA- CAPTURE DE DATOS
 
-let form = document.querySelector("form")
-const modal = document.querySelector('#modal')
-const cerrar = document.querySelector('.close')
-form.addEventListener("submit", (event) => {
-  actionForm(event)
-  modal.style.display = "block"
-})
+// FUNCIÓN IMPRIMIR FORMULARIO
+function printForm() {
+  contact.innerHTML = `
+      <section class="containerContacto" id="containerContacto">
+          <h3>Contactanos</h3>
+          <div class="contact-wrapper animated bounceInUp">
+              <div class="contact-form">
+                  <form id="contactForm" action="">
+                      <p>
+                          <label for="nombreApellido">Nombre y Apellido</label>
+                          <input type="text" id="nombreApellido" name="nombreApellido">
+                      </p>
+                      <p>
+                          <label for="email">Email</label>
+                          <input type="email" id="email" name="email">
+                      </p>
+                      <p>
+                          <label for="telefono">Numero de telefono</label>
+                          <input type="tel" id="telefono" name="telefono">
+                      </p>
+                      <p class="block">
+                          <input type="submit" id="buttonForm" class="button_contact" value="ENVIAR">
+                      </p>
+                  </form>
+              </div>
+              <div class="contact-info">
+                  <h4>Mas Info</h4>
+                  <p> Ubicacion: </p>
+                  <p>Capital Federal</p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105085.75690524078!2d-58.51775584746096!3d-34.605933995200715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1685996822488!5m2!1ses-419!2sar" class="tag-map" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+          </div>
+      </section>
+  `;
 
-function modalForm() {
-  modal.style.display = "none";
-  location.reload()
+  const contactForm = document.getElementById("contactForm");
+  contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      actionForm(event);
+  });
 }
-cerrar.addEventListener("click", modalForm);
 
-window.addEventListener("click", (event) => {
-  if (event.target == modal) {
-    modal.style.display = "none"
-  }
-})
+// SWAL ALERT FORMULARIO DE CONTACTO
+function actionForm(event) {
+  event.preventDefault();
 
-function actionForm(evento) {
-  evento.preventDefault()
-  let formDatos = {
-    nombreYapellido: evento.target[0].value,
-    direccionDeEmail: evento.target[1].value,
-    telefono: evento.target[2].value,
-    dni: evento.target[3].value
-  }
-  console.log(formDatos);
+  const formData = {
+      nombre: event.target.elements["nombreApellido"].value,
+      correo: event.target.elements["email"].value,
+      telefono: event.target.elements["telefono"].value,
+  };
+
+  console.log(formData);
+
+  // Vaciar los campos del formulario
+  event.target.elements["nombreApellido"].value = "";
+  event.target.elements["email"].value = "";
+  event.target.elements["telefono"].value = "";
+
+    swal({
+        title: `Gracias ${formData.nombre} por dejarnos tus datos. A la brevedad nos contactaremos.`,
+        icon: "success",
+        button: "Continuar",
+    });
 }
 
 
-function backHome() {
-  setState("paginaANavegar", "index")
-  ChangeTemplateLayaout()
+
+function printLogin(){
+registration.innerHTML= `
+<section class="login" id="login">
+                <div class="text-center pt-5">
+                    <h4>INGRESA PARA RESERVAR TU CLASE</h4>
+                </div>
+
+                <div class=" containerLogin">
+
+                    <div class="ingresar">
+                        <form action="" id="formularioSocio">
+                            <label name="usuario">USUARIO</label>
+                            <input type="text" name="usuario" id="usuario">
+                            <label name="password">CONTRASEÑA</label>
+                            <input type="password" name="password" id="password">
+                            <p class="block">
+                                <input type="submit" class="btn btn-group-toggle btn-light" value="Enviar">
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="registrar">
+                        <h4>Registrate</h4>
+                        <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
+                        <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
+                        <input type="email" name="email" id="email" value=""
+                            placeholder="Ingresa tu direccion de correo">
+                        <input type="password" name="contraseña" id="contraseña" value=""
+                            placeholder="Ingresa tu clave">
+                        <input type="submit" class="btn btn-group-toggle btn-light" value="Registrate">
+                    </div>
+                </div>
+            </section>
+`
 }
+
 
 // CHECKBOX DINAMICAS
 
