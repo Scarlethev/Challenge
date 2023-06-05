@@ -12,6 +12,11 @@ let tarjetas = document.getElementById("productos")
 let selectNav = document.getElementsByClassName("navLink");
 var buttonNav = [];
 
+//CARGAR LA PÁGINA EN HOME 
+window.addEventListener('DOMContentLoaded', function() {
+  imprimir('');
+});
+
 //FUNCIÓN PARA CAMBIAR DE PÁGINA
 
 for (var i = 0; i < selectNav.length; i++) {
