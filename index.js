@@ -193,41 +193,99 @@ function actionForm(event) {
 }
 
 
+// FUNCIÓN IMPRESIÓN DEL LOGIN
+function printLogin() {
+  registration.innerHTML = `
+      <section class="login" id="login">
+          <div class="text-center pt-5">
+              <h4>INGRESA PARA RESERVAR TU CLASE</h4>
+          </div>
 
-function printLogin(){
-registration.innerHTML= `
-<section class="login" id="login">
-                <div class="text-center pt-5">
-                    <h4>INGRESA PARA RESERVAR TU CLASE</h4>
-                </div>
+          <div class="containerLogin">
+              <div class="ingresar">
+                  <form action="" id="formularioSocio">
+                      <label for="usuario">USUARIO</label>
+                      <input type="text" name="usuario" id="usuario">
+                      <label for="password">CONTRASEÑA</label>
+                      <input type="password" name="password" id="password">
+                      <p class="block">
+                          <input type="button" class="btn btn-group-toggle btn-light ingreso" value="Enviar">
+                      </p>
+                  </form>
+              </div>
 
-                <div class=" containerLogin">
+              <div class="registrar">
+                  <h4>Registrate</h4>
+                  <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
+                  <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
+                  <input type="email" name="email" id="email" value="" placeholder="Ingresa tu dirección de correo">
+                  <input type="password" name="contraseña" id="contraseña" value="" placeholder="Ingresa tu clave">
+                  <input type="button" class="btn btn-group-toggle btn-light registro" value="Registrate">
+              </div>
+          </div>
+      </section>
+  `;
 
-                    <div class="ingresar">
-                        <form action="" id="formularioSocio">
-                            <label name="usuario">USUARIO</label>
-                            <input type="text" name="usuario" id="usuario">
-                            <label name="password">CONTRASEÑA</label>
-                            <input type="password" name="password" id="password">
-                            <p class="block">
-                                <input type="submit" class="btn btn-group-toggle btn-light" value="Enviar">
-                            </p>
-                        </form>
-                    </div>
+  let ingresoButtons = document.getElementsByClassName("ingreso");
+  Array.from(ingresoButtons).forEach(function (button) {
+      button.addEventListener("click", function (event) {
+          event.preventDefault();
+          actionIngreso(event);
+      });
+  });
 
-                    <div class="registrar">
-                        <h4>Registrate</h4>
-                        <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
-                        <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
-                        <input type="email" name="email" id="email" value=""
-                            placeholder="Ingresa tu direccion de correo">
-                        <input type="password" name="contraseña" id="contraseña" value=""
-                            placeholder="Ingresa tu clave">
-                        <input type="submit" class="btn btn-group-toggle btn-light" value="Registrate">
-                    </div>
-                </div>
-            </section>
-`
+  let registroButtons = document.getElementsByClassName("registro");
+  Array.from(registroButtons).forEach(function (button) {
+      button.addEventListener("click", function (event) {
+          event.preventDefault();
+          actionRecord(event);
+          actionRegistro(event)
+      });
+  });
+}
+
+function actionRecord(event) {
+  event.preventDefault();
+
+  const nombreInput = document.getElementById("nombre");
+  const apellidoInput = document.getElementById("apellido");
+  const emailInput = document.getElementById("email");
+  const contraseñaInput = document.getElementById("contraseña");
+
+  const dataRecord = {
+      nombre: nombreInput.value,
+      apellido: apellidoInput.value,
+      correo: emailInput.value,
+      contraseña: contraseñaInput.value,
+  };
+
+  console.log(dataRecord);
+
+  // Vaciar los campos del formulario de registro
+  nombreInput.value = "";
+  nombreInput.setAttribute("placeholder", "Ingresa tu nombre");
+  apellidoInput.value = "";
+  apellidoInput.setAttribute("placeholder", "Ingresa tu apellido");
+  emailInput.value = "";
+  emailInput.setAttribute("placeholder", "Ingresa tu dirección de correo");
+  contraseñaInput.value = "";
+  contraseñaInput.setAttribute("placeholder", "Ingresa tu clave");
+}
+
+function actionIngreso(event) {
+  swal({
+      title: "Has ingresado correctamente",
+      icon: "success",
+      button: "Continuar",
+  });
+}
+
+function actionRegistro(event) {
+  swal({
+      title: "Te has registrado correctamente",
+      icon: "success",
+      button: "Continuar",
+  });
 }
 
 
