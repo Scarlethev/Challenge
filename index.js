@@ -4,6 +4,9 @@ console.log(productos)
 let actividades = document.getElementById("galeria")
 let carousel = document.getElementsByClassName("carousel slide container-fluid")
 let tarjetas = document.getElementById("productos")
+let formularioSocio= document.getElementById("formularioSocio")
+let datoUsuario; 
+let formDatosDos;
 console.log(tarjetas)
 console.log(actividades)
 console.log(carousel)
@@ -23,6 +26,18 @@ function imprimir(id) {
 
   switch (id) {
 
+    case "index":
+      planes.style.display = "flex",
+      actividades.style.display = "flex",
+      carouselExampleAutoplaying.style.display = "flex",
+      pase.style.display= "flex",
+      containerContacto.style.display="flex"
+      console.log("Estoy en index")
+      categories(productos)
+      display(productos)
+      break;
+
+
     case "planes":
       console.log("Estoy en planes");
       planes.style.display = "flex",
@@ -30,9 +45,6 @@ function imprimir(id) {
       containerDisciplinas.style.display = "none",
       carouselExampleAutoplaying.style.display = "none",
       pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
       containerContacto.style.display="none"
       break;
 
@@ -43,11 +55,7 @@ function imprimir(id) {
       containerDisciplinas.style.display = "none",
       carouselExampleAutoplaying.style.display = "none",
       pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
       containerContacto.style.display="none"
-      // tienda.style.display = "flex"
       break;
 
     case "sedes":
@@ -57,9 +65,6 @@ function imprimir(id) {
       containerDisciplinas.style.display = "none",
       carouselExampleAutoplaying.style.display = "none",
       pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
       containerContacto.style.display="none"
       break;
 
@@ -71,9 +76,6 @@ function imprimir(id) {
       containerDisciplinas.style.display = "none",
       carouselExampleAutoplaying.style.display = "none",
       pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
       containerContacto.style.display="flex"
       break
 
@@ -84,32 +86,24 @@ function imprimir(id) {
       containerDisciplinas.style.display = "none",
       carouselExampleAutoplaying.style.display = "none",
       pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
       containerContacto.style.display="none"
-      // login.style.display= "flex"
       break;
 
     default:
-      console.log("Estoy en login");
       planes.style.display = "flex",
       actividades.style.display = "flex",
-      containerDisciplinas.style.display = "flex",
       carouselExampleAutoplaying.style.display = "flex",
       pase.style.display= "flex",
-      // tienda.style.display= "flex",
-      // productos.style.display="flex"
-      // row.style.display = "flex",
       containerContacto.style.display="flex"
-      // login.style.display= "flex"
       categories(productos)
+      console.log("Estoy en default")
       display(productos)
       break;
   }
 }
 
 function display(array) {
+  console.log(array)
 
   let html = "";
   for (var i = 0; i < array.length; i++) {
@@ -278,3 +272,30 @@ function filtrosCombinados() {
       tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
 
 }
+
+// LOGICA DEL LOGIN
+
+let usuario = document.getElementById("usuario");
+console.log(usuario)
+
+formularioSocio.addEventListener("submit",(event) =>{
+  actionFormDos(event)
+})
+
+  function actionFormDos(evento) {
+  evento.preventDefault()
+  formDatosDos = {
+    usuario: evento.target[0].value,
+    clave: evento.target[1].value,
+  }
+  console.log(formDatosDos);
+  if(formDatosDos.usuario=="scarlethev" && formDatosDos.clave == "1234"){
+    console.log("Bienvenida")
+  }
+}
+
+
+
+
+
+
