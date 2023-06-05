@@ -91,14 +91,6 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
 /* PASE LIBRE*/
 
 .modal {
@@ -437,6 +429,13 @@ body {
 
 /*TIENDA*/
 
+.tittle-store{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .separacion {
     display: flex;
     flex-direction: row;
@@ -444,6 +443,12 @@ body {
     row-gap: 4px;
     column-gap: 4px;
     justify-content: space-evenly;
+}
+
+.productos{
+    width: 100vw;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 

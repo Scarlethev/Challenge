@@ -135,7 +135,7 @@ function display(array) {
 function printForm() {
   contact.innerHTML = `
       <section class="containerContacto" id="containerContacto">
-          <h3>Contactanos</h3>
+          <h3>CONTACTANOS</h3>
           <div class="contact-wrapper animated bounceInUp">
               <div class="contact-form">
                   <form id="contactForm" action="">
@@ -203,7 +203,7 @@ function printLogin() {
   registration.innerHTML = `
       <section class="login" id="login">
           <div class="text-center pt-5">
-              <h4>INGRESA PARA RESERVAR TU CLASE</h4>
+              <h4>INGRESA PARA RESERVAR TU CLASE O RESGÍSTRATE</h4>
           </div>
 
           <div class="containerLogin">
