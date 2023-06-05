@@ -1,42 +1,95 @@
 let productos = (dataGym.productos)
+let galeryHome = document.getElementById("galery-home")
+let activities = document.getElementById("activities")
+let pass = document.getElementById("pass")
+let plans = document.getElementById("plans")
+let store = document.getElementById("store")
+let locations = document.getElementById("locations")
+let contact = document.getElementById("contact")
+let registration = document.getElementById("registration-and-reservation")
 
-let navbarLi = document.getElementsByClassName("navLink");
-console.log(navbarLi)
+let selectNav = document.getElementsByClassName("navLink");
+var buttonNav = [];
 
-for (let i = 0; i < navbarLi.length; i++) {
-  let element = navbarLi[i];
+//FUNCIÓN PARA CAMBIAR DE PÁGINA
+
+for (var i = 0; i < selectNav.length; i++) {
+  const element = selectNav[i];
+  buttonNav.push(selectNav[i].innerText);
   element.addEventListener("click", function (e) {
-    imprimir(e.target.id)
-  })
+    imprimir(e.target.id);
+  });
 }
 
 function imprimir(id) {
-  console.log("id imprimir", id)
 
   switch (id) {
 
     case "planes":
-
+      galeryHome.style.display = "none";
+      activities.style.display = "none";
+      pass.style.display = "none";
+      plans.style.display = "flex";
+      store.style.display = "none";
+      locations.style.display = "none";
+      contact.style.display = "none";
+      registration.style.display = "none";
       break;
 
     case "tienda":
-
+      galeryHome.style.display = "none";
+      activities.style.display = "none";
+      pass.style.display = "none";
+      plans.style.display = "none";
+      store.style.display = "flex";
+      locations.style.display = "none";
+      contact.style.display = "none";
+      registration.style.display = "none";
       break;
 
     case "sedes":
-   
+      galeryHome.style.display = "none";
+      activities.style.display = "none";
+      pass.style.display = "none";
+      plans.style.display = "none";
+      store.style.display = "none";
+      locations.style.display = "flex";
+      contact.style.display = "none";
+      registration.style.display = "none";
       break;
 
 
     case "contacto":
- 
+      galeryHome.style.display = "none";
+      activities.style.display = "none";
+      pass.style.display = "none";
+      plans.style.display = "none";
+      store.style.display = "none";
+      locations.style.display = "none";
+      contact.style.display = "flex";
+      registration.style.display = "none";
       break
 
     case "login":
-
+      galeryHome.style.display = "none";
+      activities.style.display = "none";
+      pass.style.display = "none";
+      plans.style.display = "none";
+      store.style.display = "none";
+      locations.style.display = "none";
+      contact.style.display = "none";
+      registration.style.display = "flex";
       break;
 
     default:
+      galeryHome.style.display = "flex";
+      activities.style.display = "flex";
+      pass.style.display = "flex";
+      plans.style.display = "none";
+      store.style.display = "none";
+      locations.style.display = "none";
+      contact.style.display = "none";
+      registration.style.display = "none";
       categories(productos)
       display(productos)
       break;
@@ -44,6 +97,7 @@ function imprimir(id) {
 }
 
 function display(array) {
+  console.log(array)
 
   let html = "";
   for (var i = 0; i < array.length; i++) {
@@ -113,9 +167,9 @@ function backHome() {
 
 //FUNCION SEARCH
 
-input.addEventListener("keyup", function (vino) {
+input.addEventListener("keyup", function (event) {
 
-  var datoInput = vino.target.value;
+  var datoInput = event.target.value;
   let datoLimpio = datoInput.trim().toLowerCase();
   console.log(datoLimpio)
 
@@ -140,8 +194,8 @@ function categories(array) {
 
   let categorias = ""
   lastCategories.map(category =>
-      categorias +=
-      `<div>
+    categorias +=
+    `<div>
       <input type="checkbox" value="${category}">
       <label> ${category}</label>
       <div>
@@ -158,54 +212,81 @@ function categories(array) {
 
 function checkboxListener() {
 
-  var checkboxes= document.getElementById("checkbox");
+  var checkboxes = document.getElementById("checkbox");
   var checkbox = checkboxes.querySelectorAll('input[type="checkbox"]');
 
   for (var i = 0; i < checkbox.length; i++) {
-      checkbox[i].addEventListener("click", function () {
-          arrayCheckbox = [];
-          for (var i = 0; i < checkbox.length; i++) {
-              if (checkbox[i].checked) {
-                  arrayCheckbox.push(checkbox[i].value)
-              }
-          }
-          console.log(arrayCheckbox)
-          filtrosCombinados()
-      })
+    checkbox[i].addEventListener("click", function () {
+      arrayCheckbox = [];
+      for (var i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+          arrayCheckbox.push(checkbox[i].value)
+        }
+      }
+      console.log(arrayCheckbox)
+      filtrosCombinados()
+    })
   }
 }
 
-function filtrosCombinados() {
+// function filtrosCombinados() {
 
-  var vinosPorBanderas = [];
+//   var  = [];
 
-  if (datoLimpio !== "" && arrayCheckbox.length > 0) {
-      arrayCheckbox.map(bandera => {
-          vinosPorBanderas.push(...arrayAFiltrar.filter(vino =>
-              vino.nombre.toLowerCase().includes(datoLimpio) && vino.pais === bandera))
-      })
+//   if (datoLimpio !== "" && arrayCheckbox.length > 0) {
+//       arrayCheckbox.map(bandera => {
+//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino =>
+//               vino.nombre.toLowerCase().includes(datoLimpio) && vino.pais === bandera))
+//       })
 
+//   }
+
+//   else if (datoLimpio !== "" && arrayCheckbox.length == 0) {
+//       vinosPorBanderas = arrayAFiltrar.filter(vino => vino.nombre.toLowerCase().includes(datoLimpio))
+//   }
+
+//   else if (datoLimpio === "" && arrayCheckbox.length > 0) {
+
+//       arrayCheckbox.map(category =>
+//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino => vino.pais === category))
+//       )
+//   }
+
+//   else {
+//       vinosPorBanderas = arrayAFiltrar
+
+//   }
+
+
+//   vinosPorBanderas.length > 0 ?
+//       pintarHTML(vinosPorBanderas) :
+//       tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
+
+// }
+
+// LOGICA DEL LOGIN
+
+let usuario = document.getElementById("usuario");
+console.log(usuario)
+
+formularioSocio.addEventListener("submit", (event) => {
+  actionFormDos(event)
+})
+
+function actionFormDos(evento) {
+  evento.preventDefault()
+  formDatosDos = {
+    usuario: evento.target[0].value,
+    clave: evento.target[1].value,
   }
-
-  else if (datoLimpio !== "" && arrayCheckbox.length == 0) {
-      vinosPorBanderas = arrayAFiltrar.filter(vino => vino.nombre.toLowerCase().includes(datoLimpio))
+  console.log(formDatosDos);
+  if (formDatosDos.usuario == "scarlethev" && formDatosDos.clave == "1234") {
+    console.log("Bienvenida")
   }
-
-  else if (datoLimpio === "" && arrayCheckbox.length > 0) {
-
-      arrayCheckbox.map(category =>
-          vinosPorBanderas.push(...arrayAFiltrar.filter(vino => vino.pais === category))
-      )
-  }
-
-  else {
-      vinosPorBanderas = arrayAFiltrar
-
-  }
-
-
-  vinosPorBanderas.length > 0 ?
-      pintarHTML(vinosPorBanderas) :
-      tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
-
 }
+
+
+
+
+
+

@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg p-3">
             <div class="container-fluid">
 
-                <a href="./index.html"><img src="./imagenes/logo1.JPG" class="logo-mz" alt="logoGym" width="90"
+                <a href="#index"><img src="./imagenes/logo1.JPG" class="logo-mz navLink" id="logo" alt="logoGym" width="90"
                         height="45"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -32,27 +32,31 @@
                     <span class="navbar-toggler-icon bg-white"></span>
                 </button>
 
-
                 <section class="headerThree">
                     <nav>
-                        <ul class="navMenu" id="navMenu">
-                            <li class="navLink"><a href="./index.html#index" id="index">HOME</a></li>
-                            <li class="navLink"><a href="./index.html#planes" id="planes">PLANES</a></li>
-                            <li class="navLink"><a href="./index.html#tienda" id="tienda">TIENDA</a></li>
-                            <li class="navLink"><a href="./index.html#sedes" id="sedes">SEDES</a></li>
-                            <li class="navLink"><a href="./index.html#contacto" id="contacto">CONTACTO</a></li>
-                            <li class="navLink"><a href="./index.html#login" id="login">LOGIN</a></li>
+                        <ul class="navMenu px-5" id="navMenu">
+                            <li class="navLink"><a href="./index.html#index" id="index" class="text_nav">HOME</a></li>
+                            <li class="navLink"><a href="./index.html#planes" id="planes" class="text_nav">PLANES</a>
+                            </li>
+                            <li class="navLink"><a href="./index.html#tienda" id="tienda" class="text_nav">TIENDA</a>
+                            </li>
+                            <li class="navLink"><a href="./index.html#sedes" id="sedes" class="text_nav">SEDES</a></li>
+                            <li class="navLink"><a href="./index.html#contacto" id="contacto"
+                                    class="text_nav">CONTACTO</a></li>
+                            <li class="navLink"><a href="./index.html#login" id="login" class="text_nav">LOGIN</a></li>
                         </ul>
                     </nav>
-            </div>
+                </section>
             </div>
         </nav>
     </header>
 
+
     <main>
-        <div id="carrousel_home">
-            <section id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel">
-                <div class="carousel-inner container-fluid">
+        <div id="galery-home">
+            <section id="carouselExampleAutoplaying" class="carousel slide container-fluid my-5"
+                data-bs-ride="carousel">
+                <div class="carousel-inner container-lg">
                     <div class="carousel-item active">
                         <img src="./imagenes/adult-gf488fe392_1280.jpg" class="d-block tamano" alt="...">
                     </div>
@@ -78,64 +82,248 @@
                 </button>
             </section>
         </div>
-        <section id="galeria" class="containerActividades">
-            <div class="text-center pt-5">
-                <h2>ACTIVIDADES</h2>
-                <p>Estos son nuestros programas de disciplinas</p>
+
+
+        <!--ACTIVIDADES-->
+        <div id="activities">
+            <section id="galeria" class="container-lg mx-auto actividades">
+
+                <div class="text-center pt-5 ">
+                    <h2>ACTIVIDADES</h2>
+                    <p>Estos son nuestros programas de disciplinas</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/mujer-adulta-practicando-yoga-casa.jpg" width="1100px"
+                                height="820px" alt=""></a>
+                        <div class="overlay">
+                            <h3> YOGA </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/adultos-jovenes-gimnasio-deportivo-pesas-rusas.jpg"
+                                width="1100px" height="820px" alt=""> </a>
+                        <div class="overlay">
+                            <h3>FUNCIONAL</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/mujer-haciendo-pilates-pelota.jpg" width="1100px" height="820px"
+                                alt=""></a>
+                        <div class="overlay">
+                            <h3> PILATES</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/young-woman-1333600_1280.jpg" width="1100px" height="820px"
+                                alt=""></a>
+                        <div class="overlay">
+                            <h3>BOXEO</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/kettlebell-3293475_1280.jpg" width="1100px" height="820px"
+                                alt=""></a>
+                        <div class="overlay">
+                            <h3> STRECH </h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <a href="#"> <img src="imagenes/zumba-andrea-piacquadio-863977.jpg" width="1100px"
+                                height="820px" alt=""></a>
+                        <div class="overlay">
+                            <h3> ZUMBA</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <div id="pass">
+            <section id="pase" class="pase container my-5">
+                <div class="text-center pt-5">
+                    <h4>ACTIVA TU PASE DE PRUEBA GRATIS</h4>
+                    <p>Ingresa los datos para la reserva</p>
+                </div>
+                <div class="content">
+                    <div class="contact animated bounceInUp">
+                        <div class="contact-form">
+                            <form action="" id="form" method="post">
+                                <p>
+                                    <label>Nombre y Apellido</label>
+                                    <input type="text" name="Nombre y Apellido">
+                                </p>
+                                <p>
+                                    <label>Email</label>
+                                    <input type="email" name="Email">
+                                </p>
+                                <p>
+                                    <label>Numero de telefono</label>
+                                    <input type="tel" name="Numero de telefono">
+                                </p>
+
+                                <p>
+                                    <label>DNI</label>
+                                    <input type="number" name="DNI">
+                                </p>
+
+                                <p class="block">
+                                    <input type="submit" class="btn btn-group-toggle btn-light" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" value="Enviar">
+                                    <!-- <button> ENVIAR </button> -->
+                                </p>
+                            </form>
+                            <div id="modal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>¡Te enviamos un correo con la reservación, te esperamos!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Modal -->
+        <div id="modalComentario"></div>
+
+        <!-- TARJETA DE PLANES  -->
+        <div id="plans">
+            <!-- <section id="planes">
+    <div class="container__background-triangle">
+        <div class="triangle triangle1"></div>
+        <div class="triangle triangle2"></div>
+        <div class="triangle triangle3"></div>
+    </div>
+
+    <div class="container__cards text-center text-white ">
+        <div class="card text-white">
+            <div class="cover__card text-center">
+                <h1 class="bg-dark-subtle py-3">PLAN BLACK</h1>
+                <p class="tamañoPrecio"> $15.000/ mes</p>
             </div>
-
-            <div class="row containerDisciplinas" id="containerDisciplinas">
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/mujer-adulta-practicando-yoga-casa.jpg" width="1100px" height="820px" alt="">
-                    <div class="imagenTexto">
-                        <h3><a href=""></a>YOGA</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/adultos-jovenes-gimnasio-deportivo-pesas-rusas.jpg" width="1100px" height="820px"
-                        alt="">
-                    <div class="imagenTexto">
-                        <h3>FUNCIONAL</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/mujer-haciendo-pilates-pelota.jpg" width="1100px" height="820px" alt="">
-                    <div class="imagenTexto">
-                        <h3><a href=""></a>PILATES</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/young-woman-1333600_1280.jpg" width="1100px" height="820px" alt="">
-                    <div class="imagenTexto">
-                        <h3><a href=""></a>BOXEO</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/kettlebell-3293475_1280.jpg" width="1100px" height="820px" alt="">
-                    <div class="imagenTexto">
-                        <h3><a href=""></a>STRECH</h3>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 galeria">
-                    <img src="imagenes/zumba-andrea-piacquadio-863977.jpg" width="1100px" height="820px" alt="">
-                    <div class="imagenTexto">
-                        <h3><a href=""></a>ZUMBA</h3>
-                    </div>
-                </div>
-
+            <h2>!Accede a +100 sedes en todo capital!</h2>
+            <hr class="bg-white">
+            <i> Acceso a +100 sedes </i>
+            <i>Acceso a todas las disciplinas</i>
+            <i>Cualquier dia y horario de la semana</i>
+            <i>Clases en vivo y videollamdas con Personal Trainer</i>
+            <i>App Nutrición</i>
+            <hr>
+            <div class="footer__card ">
+                <button class="user__name">!Asociate Ya! </button>
             </div>
+        </div>
 
-        </section>
-
-        <section id="pase" class="pase">
-            <div class="text-center pt-5">
-                <h4>ACTIVA TU PASE DE PRUEBA GRATIS</h4>
-                <p>Ingresa los datos para la reserva</p>
+        <div class="card text-white">
+            <div class="cover__card ">
+                <h1 class="bg-danger py-3">PLAN SMART</h1>
+                <p class="tamañoPrecio"> $12.000/ mes</p>
             </div>
-            <div class="content">
-                <div class="contact animated bounceInUp">
+            <h2>!Accede a +50 sedes en todo capital!</h2>
+            <hr class="bg-white">
+            <i> Acceso a +50 sedes </i> <br>
+            <i>Acceso a todas las disciplinas</i> <br>
+            <i>Cualquier dia y horario de la semana</i> <br>
+            <hr>
+            <div class="footer__card">
+                <button class="user__name">!Asociate Ya!</button>
+            </div>
+        </div>
+
+        <div class="card text-white">
+            <div class="cover__card ">
+                <h1 class="bg-warning py-3">PLAN PLUS</h1>
+                <p class="tamañoPrecio"> $8.000/ mes</p>
+            </div>
+            <h2>!Accede a cualquier sede a nivel local!</h2>
+            <hr class="bg-white">
+            <i> Acceso a cualquiers sede a nivel local </i> <br>
+            <i>Acceso a todas las disciplinas</i><br>
+            <i>3 veces por semana</i>
+            <hr>
+            <div class="footer__card">
+                <button class="user__name">!Asociate Ya!</button>
+            </div>
+        </div>
+    </div>
+</section> -->
+        </div>
+
+        <!--TIENDA-->
+
+        <div id="store">
+            <section class="tienda" id="tienda">
+                <div class="container my-5">
+                    <header class="mb-4">
+                        <h3>Nuestros productos</h3>
+                        <div class="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input id="input" type="text" placeholder="Busca aquí...">
+                        </div>
+                    </header>
+
+                    <div class="row productos" id="productos">
+
+                        <div id="checkbox">checkbox</div>
+
+                    </div>
+            </section>
+        </div>
+
+        <div id="locations">
+            <section class="sedes" id="sedes">
+                <h3>Ven a visitar en nuestras diferentes sedes</h3>
+
+                <div class="container-sedes">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sede Central</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Microcentro</h6>
+                            <p class="card-text">Dirección: En el barrio de Microcentro.</p>
+                            <a href="#" class="card-link">Ver mapa</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sede</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Boedo</h6>
+                            <p class="card-text">Dirección: En el barrio de Boedo.</p>
+                            <a href="#" class="card-link">Ver mapa</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sede</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Palermo</h6>
+                            <p class="card-text">Dirección: En el barrio de Palermo.</p>
+                            <a href="#" class="card-link">Ver mapa</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sede</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Barrio Norte</h6>
+                            <p class="card-text">Dirección: En el barrio de Barrio Norte.</p>
+                            <a href="#" class="card-link">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="contact">
+            <seccion class="containerContacto" id="containerContacto">
+                <h3>Contactanos</h3>
+                <div class="contact-wrapper animated bounceInUp">
                     <div class="contact-form">
-                        <form action="" id="form" method="post">
+                        <form action="">
                             <p>
                                 <label>Nombre y Apellido</label>
                                 <input type="text" name="Nombre y Apellido">
@@ -149,149 +337,45 @@
                                 <input type="tel" name="Numero de telefono">
                             </p>
 
-                            <p>
-                                <label>DNI</label>
-                                <input type="number" name="DNI">
-                            </p>
-
                             <p class="block">
-                                <input type="submit" class="btn btn-group-toggle btn-light" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal" value="Enviar">
-                                <!-- <button> ENVIAR </button> -->
+                                <button> ENVIAR </button>
                             </p>
                         </form>
-                        <div id="modal" class="modal">
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <p>¡Te enviamos un correo con la reservación, te esperamos!</p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- Modal -->
-        <div id="modalComentario"></div>
-
-
-        <section class="tienda" id="tienda">
-            <div class="container my-5">
-                <header class="mb-4">
-                    <h3>Nuestros productos</h3>
-                    <div class="search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input id="input" type="text" placeholder="Busca aquí...">
-                    </div>
-                </header>
-
-                <div class="row productos" id="productos">
-
-                    <div id="checkbox">checkbox</div>
-
-                </div>
-
-        </section>
-
-        <section class="sedes" id="sedes">
-
-            <h3>Ven a visitar en nuestras diferentes sedes</h3>
-
-            <div class="container-sedes">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede Central</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Microcentro</h6>
-                        <p class="card-text">Dirección: En el barrio de Microcentro.</p>
-                        <a href="#" class="card-link">Ver mapa</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Boedo</h6>
-                        <p class="card-text">Dirección: En el barrio de Boedo.</p>
-                        <a href="#" class="card-link">Ver mapa</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Palermo</h6>
-                        <p class="card-text">Dirección: En el barrio de Palermo.</p>
-                        <a href="#" class="card-link">Ver mapa</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Sede</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Barrio Norte</h6>
-                        <p class="card-text">Dirección: En el barrio de Barrio Norte.</p>
-                        <a href="#" class="card-link">Ver mapa</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <seccion class="containerContacto" id="containerContacto">
-            <h3>Contactanos</h3>
-            <div class="contact-wrapper animated bounceInUp">
-                <div class="contact-form">
-                    <form action="">
+                    <div class="contact-info">
+                        <h4>Mas Info</h4>
+                        <ul>
+                            <li> Ubicacion :
+                            </li>
+                        </ul>
                         <p>
-                            <label>Nombre y Apellido</label>
-                            <input type="text" name="Nombre y Apellido">
                         </p>
-                        <p>
-                            <label>Email</label>
-                            <input type="email" name="Email">
+                        <p>Argentina
                         </p>
-                        <p>
-                            <label>Numero de telefono</label>
-                            <input type="tel" name="Numero de telefono">
-                        </p>
-
-                        <p class="block">
-                            <button> ENVIAR </button>
-                        </p>
-                    </form>
+                    </div>
                 </div>
-                <div class="contact-info">
-                    <h4>Mas Info</h4>
-                    <ul>
-                        <li> Ubicacion :
-                        </li>
-                    </ul>
-                    <p>
-                    </p>
-                    <p>Argentina
-                    </p>
-                </div>
-            </div>
-            </section>
+                </section>
+        </div>
 
-
+        <div id="registration-and-reservation">
             <section class="login" id="login">
-                <div class="text-center pt-5"">
-                <h4>INGRESA PARA RESERVAR TU CLASE</h4>
+                <div class="text-center pt-5">
+                    <h4>INGRESA PARA RESERVAR TU CLASE</h4>
                 </div>
-                
+
                 <div class=" containerLogin">
 
                     <div class="ingresar">
-                        <form action="">
+                        <form action="" id="formularioSocio">
                             <label name="usuario">USUARIO</label>
                             <input type="text" name="usuario" id="usuario">
                             <label name="password">CONTRASEÑA</label>
                             <input type="password" name="password" id="password">
                             <p class="block">
-                                <input type="submit" class="btn btn-group-toggle btn-light" value="INGRESAR">
+                                <input type="submit" class="btn btn-group-toggle btn-light" value="Enviar">
                             </p>
                         </form>
                     </div>
-
 
                     <div class="registrar">
                         <h4>Registrate</h4>
@@ -302,13 +386,9 @@
                         <input type="password" name="contraseña" id="contraseña" value=""
                             placeholder="Ingresa tu clave">
                     </div>
-
-
                 </div>
-                </div>
-
             </section>
-
+        </div>
     </main>
 
     <footer>
