@@ -176,9 +176,9 @@ function backHome() {
 
 //FUNCION SEARCH
 
-input.addEventListener("keyup", function (vino) {
+input.addEventListener("keyup", function (event) {
 
-  var datoInput = vino.target.value;
+  var datoInput = event.target.value;
   let datoLimpio = datoInput.trim().toLowerCase();
   console.log(datoLimpio)
 
@@ -238,40 +238,40 @@ function checkboxListener() {
   }
 }
 
-function filtrosCombinados() {
+// function filtrosCombinados() {
 
-  var vinosPorBanderas = [];
+//   var  = [];
 
-  if (datoLimpio !== "" && arrayCheckbox.length > 0) {
-      arrayCheckbox.map(bandera => {
-          vinosPorBanderas.push(...arrayAFiltrar.filter(vino =>
-              vino.nombre.toLowerCase().includes(datoLimpio) && vino.pais === bandera))
-      })
+//   if (datoLimpio !== "" && arrayCheckbox.length > 0) {
+//       arrayCheckbox.map(bandera => {
+//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino =>
+//               vino.nombre.toLowerCase().includes(datoLimpio) && vino.pais === bandera))
+//       })
 
-  }
+//   }
 
-  else if (datoLimpio !== "" && arrayCheckbox.length == 0) {
-      vinosPorBanderas = arrayAFiltrar.filter(vino => vino.nombre.toLowerCase().includes(datoLimpio))
-  }
+//   else if (datoLimpio !== "" && arrayCheckbox.length == 0) {
+//       vinosPorBanderas = arrayAFiltrar.filter(vino => vino.nombre.toLowerCase().includes(datoLimpio))
+//   }
 
-  else if (datoLimpio === "" && arrayCheckbox.length > 0) {
+//   else if (datoLimpio === "" && arrayCheckbox.length > 0) {
 
-      arrayCheckbox.map(category =>
-          vinosPorBanderas.push(...arrayAFiltrar.filter(vino => vino.pais === category))
-      )
-  }
+//       arrayCheckbox.map(category =>
+//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino => vino.pais === category))
+//       )
+//   }
 
-  else {
-      vinosPorBanderas = arrayAFiltrar
+//   else {
+//       vinosPorBanderas = arrayAFiltrar
 
-  }
+//   }
 
 
-  vinosPorBanderas.length > 0 ?
-      pintarHTML(vinosPorBanderas) :
-      tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
+//   vinosPorBanderas.length > 0 ?
+//       pintarHTML(vinosPorBanderas) :
+//       tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
 
-}
+// }
 
 // LOGICA DEL LOGIN
 
