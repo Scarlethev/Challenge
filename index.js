@@ -1,12 +1,4 @@
-console.log(dataGym);
 let productos = (dataGym.productos)
-console.log(productos)
-let actividades = document.getElementById("galeria")
-let carousel = document.getElementsByClassName("carousel slide container-fluid")
-let tarjetas = document.getElementById("productos")
-console.log(tarjetas)
-console.log(actividades)
-console.log(carousel)
 
 let navbarLi = document.getElementsByClassName("navLink");
 console.log(navbarLi)
@@ -24,85 +16,27 @@ function imprimir(id) {
   switch (id) {
 
     case "planes":
-      console.log("Estoy en planes");
-      planes.style.display = "flex",
-      actividades.style.display = "none",
-      containerDisciplinas.style.display = "none",
-      carouselExampleAutoplaying.style.display = "none",
-      pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
-      containerContacto.style.display="none"
+
       break;
 
     case "tienda":
-      console.log(productos);
-      planes.style.display = "none",
-      actividades.style.display = "none",
-      containerDisciplinas.style.display = "none",
-      carouselExampleAutoplaying.style.display = "none",
-      pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
-      containerContacto.style.display="none"
-      // tienda.style.display = "flex"
+
       break;
 
     case "sedes":
-      console.log("Estoy en sede");
-      planes.style.display = "flex",
-      actividades.style.display = "none",
-      containerDisciplinas.style.display = "none",
-      carouselExampleAutoplaying.style.display = "none",
-      pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
-      containerContacto.style.display="none"
+   
       break;
 
 
     case "contacto":
-      console.log("Estoy en contacto");
-      planes.style.display = "none",
-      actividades.style.display = "none",
-      containerDisciplinas.style.display = "none",
-      carouselExampleAutoplaying.style.display = "none",
-      pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
-      containerContacto.style.display="flex"
+ 
       break
 
     case "login":
-      console.log("Estoy en login");
-      planes.style.display = "none",
-      actividades.style.display = "none",
-      containerDisciplinas.style.display = "none",
-      carouselExampleAutoplaying.style.display = "none",
-      pase.style.display= "none",
-      // tienda.style.display= "none",
-      // productos.style.display="none"
-      // row.style.display = "none",
-      containerContacto.style.display="none"
-      // login.style.display= "flex"
+
       break;
 
     default:
-      console.log("Estoy en login");
-      planes.style.display = "flex",
-      actividades.style.display = "flex",
-      containerDisciplinas.style.display = "flex",
-      carouselExampleAutoplaying.style.display = "flex",
-      pase.style.display= "flex",
-      // tienda.style.display= "flex",
-      // productos.style.display="flex"
-      // row.style.display = "flex",
-      containerContacto.style.display="flex"
-      // login.style.display= "flex"
       categories(productos)
       display(productos)
       break;
@@ -134,9 +68,6 @@ function display(array) {
   tarjetas.innerHTML = html;
 
 }
-
-
-
 
 
 // FORMULARIO DE RESERVA- CAPTURE DE DATOS

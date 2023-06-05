@@ -23,7 +23,8 @@
         <nav class="navbar navbar-expand-lg p-3">
             <div class="container-fluid">
 
-                <a href="./index.html"><img src="" class="logo-mz" alt="logoGym" width="60" height="60"></a>
+                <a href="./index.html"><img src="./imagenes/logo1.JPG" class="logo-mz" alt="logoGym" width="90"
+                        height="45"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -41,43 +42,43 @@
                             <li class="navLink"><a href="./index.html#sedes" id="sedes">SEDES</a></li>
                             <li class="navLink"><a href="./index.html#contacto" id="contacto">CONTACTO</a></li>
                             <li class="navLink"><a href="./index.html#login" id="login">LOGIN</a></li>
-                          </ul>
-                      </nav>
-                </div>
+                        </ul>
+                    </nav>
+            </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel">
-            <div class="carousel-inner container-fluid">
-                <div class="carousel-item active">
-                    <img src="./imagenes/adult-gf488fe392_1280.jpg" class="d-block tamano" alt="...">
+        <div id="carrousel_home">
+            <section id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel">
+                <div class="carousel-inner container-fluid">
+                    <div class="carousel-item active">
+                        <img src="./imagenes/adult-gf488fe392_1280.jpg" class="d-block tamano" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/kettlebell-g897bdaea6_1280.jpg" class="d-block tamano" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/training-g69050b27a_1280.jpg" class="d-block tamano" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/man-g77843936b_1280.jpg" class="d-block tamano" alt="...">
+                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="./imagenes/kettlebell-g897bdaea6_1280.jpg" class="d-block tamano" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imagenes/training-g69050b27a_1280.jpg" class="d-block tamano" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imagenes/man-g77843936b_1280.jpg" class="d-block tamano" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </section>
-
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </section>
+        </div>
         <section id="galeria" class="containerActividades">
-
             <div class="text-center pt-5">
                 <h2>ACTIVIDADES</h2>
                 <p>Estos son nuestros programas de disciplinas</p>
@@ -126,15 +127,119 @@
 
         </section>
 
-    <section id="pase" class="pase">
-        <div class="text-center pt-5">
-            <h4>ACTIVA TU PASE DE PRUEBA GRATIS</h4>
-            <p>Ingresa los datos para la reserva</p>
-        </div>
-        <div class="content">
-            <div class="contact animated bounceInUp">
+        <section id="pase" class="pase">
+            <div class="text-center pt-5">
+                <h4>ACTIVA TU PASE DE PRUEBA GRATIS</h4>
+                <p>Ingresa los datos para la reserva</p>
+            </div>
+            <div class="content">
+                <div class="contact animated bounceInUp">
+                    <div class="contact-form">
+                        <form action="" id="form" method="post">
+                            <p>
+                                <label>Nombre y Apellido</label>
+                                <input type="text" name="Nombre y Apellido">
+                            </p>
+                            <p>
+                                <label>Email</label>
+                                <input type="email" name="Email">
+                            </p>
+                            <p>
+                                <label>Numero de telefono</label>
+                                <input type="tel" name="Numero de telefono">
+                            </p>
+
+                            <p>
+                                <label>DNI</label>
+                                <input type="number" name="DNI">
+                            </p>
+
+                            <p class="block">
+                                <input type="submit" class="btn btn-group-toggle btn-light" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" value="Enviar">
+                                <!-- <button> ENVIAR </button> -->
+                            </p>
+                        </form>
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p>¡Te enviamos un correo con la reservación, te esperamos!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal -->
+        <div id="modalComentario"></div>
+
+
+        <section class="tienda" id="tienda">
+            <div class="container my-5">
+                <header class="mb-4">
+                    <h3>Nuestros productos</h3>
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input id="input" type="text" placeholder="Busca aquí...">
+                    </div>
+                </header>
+
+                <div class="row productos" id="productos">
+
+                    <div id="checkbox">checkbox</div>
+
+                </div>
+
+        </section>
+
+        <section class="sedes" id="sedes">
+
+            <h3>Ven a visitar en nuestras diferentes sedes</h3>
+
+            <div class="container-sedes">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sede Central</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Microcentro</h6>
+                        <p class="card-text">Dirección: En el barrio de Microcentro.</p>
+                        <a href="#" class="card-link">Ver mapa</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sede</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Boedo</h6>
+                        <p class="card-text">Dirección: En el barrio de Boedo.</p>
+                        <a href="#" class="card-link">Ver mapa</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sede</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Palermo</h6>
+                        <p class="card-text">Dirección: En el barrio de Palermo.</p>
+                        <a href="#" class="card-link">Ver mapa</a>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sede</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Barrio Norte</h6>
+                        <p class="card-text">Dirección: En el barrio de Barrio Norte.</p>
+                        <a href="#" class="card-link">Ver mapa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <seccion class="containerContacto" id="containerContacto">
+            <h3>Contactanos</h3>
+            <div class="contact-wrapper animated bounceInUp">
                 <div class="contact-form">
-                    <form action="" id="form" method="post">
+                    <form action="">
                         <p>
                             <label>Nombre y Apellido</label>
                             <input type="text" name="Nombre y Apellido">
@@ -148,166 +253,63 @@
                             <input type="tel" name="Numero de telefono">
                         </p>
 
-                        <p>
-                            <label>DNI</label>
-                            <input type="number" name="DNI">
-                        </p>
-
                         <p class="block">
-                            <input type="submit" class="btn btn-group-toggle btn-light" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal" value="Enviar">
-                            <!-- <button> ENVIAR </button> -->
+                            <button> ENVIAR </button>
                         </p>
                     </form>
-                    <div id="modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <p>¡Te enviamos un correo con la reservación, te esperamos!</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="contact-info">
+                    <h4>Mas Info</h4>
+                    <ul>
+                        <li> Ubicacion :
+                        </li>
+                    </ul>
+                    <p>
+                    </p>
+                    <p>Argentina
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Modal -->
-    <div id="modalComentario"></div>
+            </section>
 
 
-    <section class="tienda" id="tienda">
-        <div class="container my-5">
-          <header class="mb-4">
-            <h3>Nuestros productos</h3>
-            <div class="search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input id="input" type="text" placeholder="Busca aquí...">
-          </div>
-          </header>
-      
-          <div class="row productos" id="productos">
-
-            <div id="checkbox">checkbox</div>
-
-          </div>
-    
-      </section>
-
-      <section class="sedes" id="sedes">
-
-      <h3>Ven a visitar en nuestras diferentes sedes</h3>
-
-        <div class="container-sedes">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sede Central</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Microcentro</h6>
-            <p class="card-text">Dirección: En el barrio de Microcentro.</p>
-            <a href="#" class="card-link">Ver mapa</a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sede</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Boedo</h6>
-            <p class="card-text">Dirección: En el barrio de Boedo.</p>
-            <a href="#" class="card-link">Ver mapa</a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sede</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Palermo</h6>
-            <p class="card-text">Dirección: En el barrio de Palermo.</p>
-            <a href="#" class="card-link">Ver mapa</a>
-          </div>
-        </div>
-
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Sede</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Barrio Norte</h6>
-            <p class="card-text">Dirección: En el barrio de Barrio Norte.</p>
-            <a href="#" class="card-link">Ver mapa</a>
-          </div>
-        </div>
-        </div>
-      </section>
-
-      <seccion class="containerContacto" id="containerContacto">
-        <h3>Contactanos</h3>
-        <div class="contact-wrapper animated bounceInUp">
-            <div class="contact-form">
-                <form action="">
-                   <p>
-                      <label>Nombre y Apellido</label> 
-                      <input type="text" name="Nombre y Apellido">
-                   </p>
-                   <p>
-                      <label>Email</label>
-                      <input type="email" name="Email">
-                   </p>
-                   <p>
-                      <label>Numero de telefono</label>
-                      <input type="tel" name="Numero de telefono">
-                   </p>
-        
-                   <p class="block">
-                      <button> ENVIAR </button>
-                   </p>
-                </form>
-            </div>
-            <div class="contact-info">
-                <h4>Mas Info</h4>
-                <ul>
-                    <li> Ubicacion :
-                    </li>
-                </ul>
-                <p>
-                </p>
-                <p>Argentina
-                </p>
-            </div>
-            </div>
-        </section>
-
-
-        <section class="login" id="login">
-            <div class="text-center pt-5"">
+            <section class="login" id="login">
+                <div class="text-center pt-5"">
                 <h4>INGRESA PARA RESERVAR TU CLASE</h4>
                 </div>
                 
-                <div class="containerLogin">
-              
-                <div class="ingresar">
-                <form action="">
-                <label name="usuario">USUARIO</label>
-                <input type="text" name="usuario" id="usuario">
-                <label name="password">CONTRASEÑA</label>
-                <input type="password" name="password" id="password">
-                <p class="block">
-                  <input type="submit" class="btn btn-group-toggle btn-light"
-                     value="INGRESAR">
-              </p>
-            </form>
-                </div>
-             
-                
-                <div class="registrar">
-                    <h4>Registrate</h4>
-                <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
-                <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
-                <input type="email" name="email" id="email" value="" placeholder="Ingresa tu direccion de correo">
-                <input type="password" name="contraseña" id="contraseña" value="" placeholder="Ingresa tu clave">
-                </div>
-                
-                
-                </div>
-                </div>
-                    
-        </section>
+                <div class=" containerLogin">
 
-        </main>
+                    <div class="ingresar">
+                        <form action="">
+                            <label name="usuario">USUARIO</label>
+                            <input type="text" name="usuario" id="usuario">
+                            <label name="password">CONTRASEÑA</label>
+                            <input type="password" name="password" id="password">
+                            <p class="block">
+                                <input type="submit" class="btn btn-group-toggle btn-light" value="INGRESAR">
+                            </p>
+                        </form>
+                    </div>
+
+
+                    <div class="registrar">
+                        <h4>Registrate</h4>
+                        <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
+                        <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
+                        <input type="email" name="email" id="email" value=""
+                            placeholder="Ingresa tu direccion de correo">
+                        <input type="password" name="contraseña" id="contraseña" value=""
+                            placeholder="Ingresa tu clave">
+                    </div>
+
+
+                </div>
+                </div>
+
+            </section>
+
+    </main>
 
     <footer>
         <section class="footer">
@@ -319,7 +321,7 @@
                     <p>SEDES</p>
                     <p>CONTACTO</p>
                 </div>
-    
+
                 <div>
                     <h3>CONTACTO RÁPIDO:</h3>
                     <p>+123-456-7890</p>
