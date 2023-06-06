@@ -296,7 +296,6 @@ function actionRegistro(event) {
 }
 
 
-
 // FUNCION SEARCH
 var inputSearch = document.getElementById("buscador");
 

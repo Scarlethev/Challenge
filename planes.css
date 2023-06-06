@@ -64,6 +64,14 @@
     font-size: 30px !important;
 }
 
+.tittle-plans{
+    width: 85vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .card p {
     margin-top: 20px;
     font-size: 14px;
@@ -92,8 +100,16 @@
 }
 
 .user__name {
+    width: 100%;
     font-size: 25px !important;
     background-color: #ee8105;
+    color: #fff;
+    border: 0px solid;
+    border-radius: 5px;
+}
+
+.user__name:hover{
+    background-color: #ee810588;
 
 }
 
