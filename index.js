@@ -13,7 +13,7 @@ let selectNav = document.getElementsByClassName("navLink");
 var buttonNav = [];
 
 //CARGAR LA PÁGINA EN HOME 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
   imprimir('');
 });
 
@@ -168,8 +168,8 @@ function printForm() {
 
   const contactForm = document.getElementById("contactForm");
   contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
-      actionForm(event);
+    event.preventDefault();
+    actionForm(event);
   });
 }
 
@@ -178,9 +178,9 @@ function actionForm(event) {
   event.preventDefault();
 
   const formData = {
-      nombre: event.target.elements["nombreApellido"].value,
-      correo: event.target.elements["email"].value,
-      telefono: event.target.elements["telefono"].value,
+    nombre: event.target.elements["nombreApellido"].value,
+    correo: event.target.elements["email"].value,
+    telefono: event.target.elements["telefono"].value,
   };
 
   console.log(formData);
@@ -190,11 +190,11 @@ function actionForm(event) {
   event.target.elements["email"].value = "";
   event.target.elements["telefono"].value = "";
 
-    swal({
-        title: `Gracias ${formData.nombre} por dejarnos tus datos. A la brevedad nos contactaremos.`,
-        icon: "success",
-        button: "Continuar",
-    });
+  swal({
+    title: `Gracias ${formData.nombre} por dejarnos tus datos. A la brevedad nos contactaremos.`,
+    icon: "success",
+    button: "Continuar",
+  });
 }
 
 
@@ -233,19 +233,19 @@ function printLogin() {
 
   let ingresoButtons = document.getElementsByClassName("ingreso");
   Array.from(ingresoButtons).forEach(function (button) {
-      button.addEventListener("click", function (event) {
-          event.preventDefault();
-          actionIngreso(event);
-      });
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      actionIngreso(event);
+    });
   });
 
   let registroButtons = document.getElementsByClassName("registro");
   Array.from(registroButtons).forEach(function (button) {
-      button.addEventListener("click", function (event) {
-          event.preventDefault();
-          actionRecord(event);
-          actionRegistro(event)
-      });
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      actionRecord(event);
+      actionRegistro(event)
+    });
   });
 }
 
@@ -258,10 +258,10 @@ function actionRecord(event) {
   const contraseñaInput = document.getElementById("contraseña");
 
   const dataRecord = {
-      nombre: nombreInput.value,
-      apellido: apellidoInput.value,
-      correo: emailInput.value,
-      contraseña: contraseñaInput.value,
+    nombre: nombreInput.value,
+    apellido: apellidoInput.value,
+    correo: emailInput.value,
+    contraseña: contraseñaInput.value,
   };
 
   console.log(dataRecord);
@@ -279,121 +279,107 @@ function actionRecord(event) {
 
 function actionIngreso(event) {
   swal({
-      title: "Has ingresado correctamente",
-      icon: "success",
-      button: "Continuar",
+    title: "Has ingresado correctamente",
+    icon: "success",
+    button: "Continuar",
   });
 }
 
 function actionRegistro(event) {
   swal({
-      title: "Te has registrado correctamente",
-      icon: "success",
-      button: "Continuar",
+    title: "Te has registrado correctamente",
+    icon: "success",
+    button: "Continuar",
   });
 }
 
 
-// CHECKBOX DINAMICAS
 
-//FUNCION SEARCH
+// FUNCION SEARCH
+var inputSearch = document.getElementById("buscador");
 
-input.addEventListener("keyup", function (event) {
-
+inputSearch.addEventListener("keyup", function (event) {
   var datoInput = event.target.value;
-  let datoLimpio = datoInput.trim().toLowerCase();
-  console.log(datoLimpio)
+  var datosOrdenados = datoInput.trim().toLowerCase();
+  var filtrado = productos.filter(producto => producto.titulo.toLowerCase().includes(datosOrdenados));
 
-  //  let filtrado= arrayAFiltrar.filter(vino => vino.Nombre.toLowerCase().includes(datoLimpio))
+  if (filtrado.length === 0) {
+    // No se encontraron resultados
+    tarjetas.innerHTML =
+      `<div class="ceroSearch">
+                <img class="imgCero" src="./imagenes/nofoundmin.png" alt="SinResultados">
+            </div>`;
+  } else {
+    // Imprimir los resultados filtrados
+    display(filtrado);
+  }
+});
 
-  // pintarHTML(filtrado)
-
-  filtrosCombinados()
-})
-
-
-
-//CREACION DE CHECKBOX DINAMICAS
-
+// CREACION DE CHECKBOX DINAMICAS
 function categories(array) {
   let categories = array.map(category => category.categoria)
-  let unica = new Set(categories)
-  let lastCategories = [...unica]
+  let unique = [...new Set(categories)]
 
-
-  //FILTROS UVAS
-
-  let categorias = ""
-  lastCategories.map(category =>
-    categorias +=
+  let checkboxes = unique.map(category =>
     `<div>
-      <input type="checkbox" value="${category}">
-      <label> ${category}</label>
-      <div>
-  `
-  )
-  document.getElementById("checkbox").innerHTML = categorias
+            <input type="checkbox" value="${category}">
+            <label> ${category}</label>
+        </div>`
+  ).join("");
 
-  checkboxListener()
-
+  document.getElementById("checkbox").innerHTML = checkboxes;
+  checkboxListener();
 }
 
-
 // FUNCION DE FILTRADO CHECKBOX PAISES 
-
 function checkboxListener() {
-
   var checkboxes = document.getElementById("checkbox");
   var checkbox = checkboxes.querySelectorAll('input[type="checkbox"]');
 
   for (var i = 0; i < checkbox.length; i++) {
     checkbox[i].addEventListener("click", function () {
-      arrayCheckbox = [];
+      var arrayCheckbox = [];
       for (var i = 0; i < checkbox.length; i++) {
         if (checkbox[i].checked) {
-          arrayCheckbox.push(checkbox[i].value)
+          arrayCheckbox.push(checkbox[i].value);
         }
       }
-      console.log(arrayCheckbox)
-      filtrosCombinados()
-    })
+      console.log(arrayCheckbox);
+      filtrosCombinados();
+    });
   }
 }
 
-// function filtrosCombinados() {
+// FUNCION DE FILTROS COMBINADOS
+function filtrosCombinados() {
+  var searchValue = inputSearch.value.trim().toLowerCase();
+  var checkboxValues = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
 
-//   var  = [];
+  var filtrados = productos.filter(producto => {
+    var tituloIncluido = producto.titulo.toLowerCase().includes(searchValue);
+    var categoriaIncluida = checkboxValues.includes(producto.categoria);
+    if (searchValue && checkboxValues.length > 0) {
+      return tituloIncluido && categoriaIncluida;
+    } else if (searchValue) {
+      return tituloIncluido;
+    } else if (checkboxValues.length > 0) {
+      return categoriaIncluida;
+    } else {
+      return true;
+    }
+  });
 
-//   if (datoLimpio !== "" && arrayCheckbox.length > 0) {
-//       arrayCheckbox.map(bandera => {
-//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino =>
-//               vino.nombre.toLowerCase().includes(datoLimpio) && vino.pais === bandera))
-//       })
-
-//   }
-
-//   else if (datoLimpio !== "" && arrayCheckbox.length == 0) {
-//       vinosPorBanderas = arrayAFiltrar.filter(vino => vino.nombre.toLowerCase().includes(datoLimpio))
-//   }
-
-//   else if (datoLimpio === "" && arrayCheckbox.length > 0) {
-
-//       arrayCheckbox.map(category =>
-//           vinosPorBanderas.push(...arrayAFiltrar.filter(vino => vino.pais === category))
-//       )
-//   }
-
-//   else {
-//       vinosPorBanderas = arrayAFiltrar
-
-//   }
-
-
-//   vinosPorBanderas.length > 0 ?
-//       pintarHTML(vinosPorBanderas) :
-//       tarjetasVinos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
-
-// }
+  if (filtrados.length === 0) {
+    // No se encontraron resultados
+    tarjetas.innerHTML =
+      `<div class="ceroSearch">
+                <img class="imgCero" src="./imagenes/nofoundmin.png" alt="SinResultados">
+            </div>`;
+  } else {
+    // Imprimir los resultados filtrados
+    display(filtrados);
+  }
+}
 
 // LOGICA DEL LOGIN
 

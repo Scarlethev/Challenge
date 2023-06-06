@@ -14,7 +14,7 @@ var dataGym = {
         "id": 2,
         "imagen":"imagenes/kettlebell-g897bdaea6_1280.jpg",
         "titulo": "Pesas 3KG",
-        "categoria" : "Pesas",
+        "categoria" : "pesas",
         "descripcion": "",
         "precio": 5700 
       },
