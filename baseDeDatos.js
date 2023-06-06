@@ -22,7 +22,7 @@ var dataGym = {
       {
         "id": 3,
         "imagen": "imagenes/suplemento.JPG",
-        "titulo": "whey Protein",
+        "titulo": "Whey Protein",
         "categoria" : "suplementos",
         "descripcion": "",
         "precio": 6600
