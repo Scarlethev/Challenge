@@ -114,7 +114,7 @@ function display(array) {
           <div class="card w-100 my-5 shadow-2-strong">
            <img src="${array[i].imagen}" style="aspect-ratio: 1 / 1" />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">${array[i].titulo}</h5>
+            <h5 class="card-title text-white text-center">${array[i].titulo}</h5>
             <p class="card-text">$${array[i].precio}</p>
             <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
               <a href="#!" class="btn btn-danger shadow-0 me-1">Detalle</a>
@@ -134,9 +134,9 @@ function display(array) {
 // FUNCIÓN IMPRIMIR FORMULARIO
 function printForm() {
   contact.innerHTML = `
-      <section class="containerContacto" id="containerContacto">
+      <section class="containerContacto my-5" id="containerContacto">
           <h3>CONTACTANOS</h3>
-          <div class="contact-wrapper animated bounceInUp">
+          <div class="contact-wrapper animated bounceInUp my-5">
               <div class="contact-form">
                   <form id="contactForm" action="">
                       <p>
@@ -202,30 +202,32 @@ function actionForm(event) {
 function printLogin() {
   registration.innerHTML = `
       <section class="login" id="login">
-          <div class="text-center pt-5">
+          <div class="text-center pt-5 my-5">
               <h4>INGRESA PARA RESERVAR TU CLASE O RESGÍSTRATE</h4>
           </div>
 
           <div class="containerLogin">
               <div class="ingresar">
                   <form action="" id="formularioSocio">
-                      <label for="usuario">USUARIO</label>
-                      <input type="text" name="usuario" id="usuario">
-                      <label for="password">CONTRASEÑA</label>
-                      <input type="password" name="password" id="password">
-                      <p class="block">
-                          <input type="button" class="btn btn-group-toggle btn-light ingreso" value="Enviar">
+                      <label for="usuario" class="text-danger">USUARIO</label>
+                      <input type="text" name="usuario" id="usuario" class="border border-warning mb-2">
+                      <label for="password" class="text-danger">CONTRASEÑA</label>
+                      <input type="password" name="password" id="password" class="border border-warning">
+                      <p class="block my-4 h2">
+                          <input type="button" class="btn btn-group-toggle btn-danger ingreso" value="Enviar">
                       </p>
                   </form>
               </div>
 
-              <div class="registrar">
-                  <h4>Registrate</h4>
-                  <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre">
-                  <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido">
-                  <input type="email" name="email" id="email" value="" placeholder="Ingresa tu dirección de correo">
-                  <input type="password" name="contraseña" id="contraseña" value="" placeholder="Ingresa tu clave">
-                  <input type="button" class="btn btn-group-toggle btn-light registro" value="Registrate">
+              <div class="registrar gap-4">
+                  <h4 class="text-danger">Registrate</h4>
+                  <input type="text" name="nombre" id="nombre" value="" placeholder="Ingresa tu nombre" class="border border-warning">
+                  <input type="text" name="apellido" id="apellido" value="" placeholder="Ingresa tu apellido" class="border border-warning">
+                  <input type="email" name="email" id="email" value="" placeholder="Ingresa tu dirección de correo" class="border border-warning">
+                  <input type="password" name="contraseña" id="contraseña" value="" placeholder="Ingresa tu clave" class="border border-warning">
+                  <p class="block my-4">
+                  <input type="button" class="btn btn-group-toggle btn-danger registro" value="Registrate">
+                  </p>
               </div>
           </div>
       </section>
